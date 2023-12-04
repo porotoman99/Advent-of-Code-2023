@@ -16,7 +16,7 @@ def getPartNumbers(previousLine, currentLine, nextLine):
 				charIndex += 1
 			numberEndIndex = charIndex
 			searchStart = max(0,numberStartIndex-1)
-			searchEnd = min(len(currentLine),numberEndIndex+1)
+			searchEnd = min(len(currentLine)-1,numberEndIndex+1)
 			valid = False
 			pLine = ""
 			cLine = ""
@@ -24,14 +24,14 @@ def getPartNumbers(previousLine, currentLine, nextLine):
 			for i in range(searchStart, searchEnd):
 				if(previousLine != ""):
 					pLine += previousLine[i]
-					if(previousLine[i] != "." and previousLine[i] != "\n" and not previousLine[i].isdecimal()):
+					if(previousLine[i] != "." and not previousLine[i].isdecimal()):
 						valid = True
 				cLine += currentLine[i]
-				if(currentLine[i] != "." and currentLine[i] != "\n" and not currentLine[i].isdecimal()):
+				if(currentLine[i] != "." and not currentLine[i].isdecimal()):
 					valid = True
 				if(nextLine != ""):
 					nLine += nextLine[i]
-					if(nextLine[i] != "." and nextLine[i] != "\n" and not nextLine[i].isdecimal()):
+					if(nextLine[i] != "." and not nextLine[i].isdecimal()):
 						valid = True
 			if(valid):
 				# print(pLine)
