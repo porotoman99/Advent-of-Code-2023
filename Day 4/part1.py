@@ -9,8 +9,8 @@ points = 0
 
 with open(inputFilePath) as inputFile:
 	for line in inputFile:
-		colonIndex = line.find(":")+1
-		card = line[colonIndex:-1]
+		colonIndex = line.find(":")
+		card = line[colonIndex+2:-1]
 		splitCard = card.split(" | ")
 		winningNumbers = splitCard[0].split()
 		cardNumbers = splitCard[1].split()
