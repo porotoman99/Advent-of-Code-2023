@@ -50,5 +50,4 @@ with open(inputFilePath) as inputFile:
 	for partNumber in newPartNumbers:
 		partNumbers.append(int(partNumber))
 
-print(partNumbers)
 print(sum(partNumbers))
