@@ -33,12 +33,22 @@ def distanceTraveled(raceTime, buttonTime):
 	moveTime = raceTime - buttonTime
 	return moveTime * buttonTime
 
+def startIndex(raceTime, bigDistance):
+	for buttonTime in range(raceTime):
+		distance = distanceTraveled(raceTime, buttonTime)
+		if(distance > bigDistance):
+			return buttonTime
 
-winCount = 0
-for buttonTime in range(bigTime):
-	distance = distanceTraveled(bigTime, buttonTime)
-	if(distance > bigDistance):
-		winCount += 1
+def endIndex(raceTime, bigDistance):
+	for buttonTime in reversed(range(raceTime)):
+		distance = distanceTraveled(raceTime, buttonTime)
+		if(distance > bigDistance):
+			return buttonTime
+
+winStart = startIndex(bigTime, bigDistance)
+winEnd = endIndex(bigTime, bigDistance)
+
+winCount = winEnd - winStart + 1
 
 print(winCount)
 
