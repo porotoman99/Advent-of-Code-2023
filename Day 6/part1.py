@@ -1,5 +1,4 @@
 import os
-from math import floor
 
 filePath = os.path.dirname(os.path.realpath(__file__))
 inputFilePath = filePath + "\\adventofcode.com_2023_day_6_input.txt"
